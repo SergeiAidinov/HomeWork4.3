@@ -16,30 +16,30 @@ public class NumberController {
 
 	@GetMapping("/first")
 	public String firstMethod() {
-		return "number-pages/first";
+		return "/number-pages/first";
 	}
 
 	@GetMapping("/second")
 	public String secondMethod() {
-		return "number-pages/second";
+		return "/number-pages/second";
 	}
 
 	@GetMapping("/third")
 	public String thirdMethod() {
-		return "number-pages/third";
+		return "/number-pages/third";
 	}
 
 	@GetMapping("/fourth")
 	public String fourthMethod(HttpServletRequest request, Model model) {
 		String line = request.getParameter("line");
 		model.addAttribute("line", line);
-		return "number-pages/fourth";
+		return "/number-pages/fourth";
 	}
 
 	@GetMapping("/fifth")
 	public String fourthMethod(@RequestParam(value = "line", required = false) String line,
 	                           Model model) {
 		model.addAttribute("line", line);
-		return "number-pages/fourth";
+		return "/number-pages/fourth";
 	}
 }
